@@ -10,6 +10,7 @@ export const UserProvider = ({ children }) => {
     api
       .post('/sessions/', userData)
       .then((res) => {
+        localStorage.clear()
         localStorage.setItem('@user: token', res.data.access)
         // localStorage.setItem('@user: userInfo', res.data.user)
 
